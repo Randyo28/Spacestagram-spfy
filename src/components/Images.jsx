@@ -1,6 +1,25 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Heart from 'react-animated-heart'
+// import { useLocation } from 'react-router-dom'
+// import {
+//   EmailShareButton,
+//   FacebookShareButton,
+//   InstapaperShareButton,
+//   LinkedinShareButton,
+//   RedditShareButton,
+//   TumblrShareButton,
+//   TwitterShareButton,
+// } from 'react-share'
+
+// import {
+//   EmailIcon,
+//   FacebookIcon,
+//   InstapaperIcon,
+//   LinkedinIcon,
+//   RedditIcon,
+//   TwitterIcon,
+// } from 'react-share'
 
 const ComponentContainer = styled.div`
   display: flex;
@@ -31,13 +50,6 @@ const ParagraphStyle = styled.p`
   text-indent: 50px;
   text-align: start;
 `
-// const ButtonStyle = styled.div`
-//   background-color: #5d97e4;
-//   margin-top: 1rem;
-//   padding: 0.5rem;
-//   border-radius: 5%;
-//   cursor: pointer;
-// `
 function Images({ images, newDate, setNewDate }) {
   //   const [like, setLike] = useState(50)
   //   const [likeActive, setLikeActive] = useState(false)
@@ -88,6 +100,8 @@ function Images({ images, newDate, setNewDate }) {
         <ParagraphStyle>{images.explanation}</ParagraphStyle>
         <h3>{images.date}</h3>
       </ImageContainer>
+      {/* <FacebookIcon size={32} round={true} />
+      <FacebookShareButton url={shareUrl} /> */}
     </ComponentContainer>
   )
 }
