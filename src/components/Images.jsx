@@ -1,25 +1,25 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Heart from 'react-animated-heart'
-// import { useLocation } from 'react-router-dom'
-// import {
-//   EmailShareButton,
-//   FacebookShareButton,
-//   InstapaperShareButton,
-//   LinkedinShareButton,
-//   RedditShareButton,
-//   TumblrShareButton,
-//   TwitterShareButton,
-// } from 'react-share'
+import { useLocation } from 'react-router-dom'
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  InstapaperShareButton,
+  LinkedinShareButton,
+  RedditShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+} from 'react-share'
 
-// import {
-//   EmailIcon,
-//   FacebookIcon,
-//   InstapaperIcon,
-//   LinkedinIcon,
-//   RedditIcon,
-//   TwitterIcon,
-// } from 'react-share'
+import {
+  EmailIcon,
+  FacebookIcon,
+  InstapaperIcon,
+  LinkedinIcon,
+  RedditIcon,
+  TwitterIcon,
+} from 'react-share'
 
 const ComponentContainer = styled.div`
   display: flex;
@@ -53,6 +53,7 @@ const ParagraphStyle = styled.p`
 function Images({ images, newDate, setNewDate }) {
   //   const [like, setLike] = useState(50)
   //   const [likeActive, setLikeActive] = useState(false)
+  const shareUrl = 'https://spacestagram-spfy.vercel.app/'
   const [isClick, setClick] = useState(false)
   const onChange = (e) => {
     setNewDate(e.target.value)
@@ -100,8 +101,8 @@ function Images({ images, newDate, setNewDate }) {
         <ParagraphStyle>{images.explanation}</ParagraphStyle>
         <h3>{images.date}</h3>
       </ImageContainer>
-      {/* <FacebookIcon size={32} round={true} />
-      <FacebookShareButton url={shareUrl} /> */}
+      <FacebookIcon size={32} round={true} />
+      <FacebookShareButton url={shareUrl} />
     </ComponentContainer>
   )
 }
