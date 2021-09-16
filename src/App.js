@@ -7,7 +7,11 @@ import { Route } from 'react-router-dom'
 
 const AppDiv = styled.div`
   text-align: center;
-  background-color: #93e9be;
+  background-image: url('/space-bg2.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
 `
 
 function App() {

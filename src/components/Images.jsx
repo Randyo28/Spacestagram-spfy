@@ -1,77 +1,30 @@
 import { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import SocialShare from './SocialShare'
+
+import {
+  ComponentContainer,
+  WelcomeMessage,
+  ImageContainer,
+  ImageStyle,
+  ParagraphStyle,
+} from './ImagesStyle'
 import Heart from 'react-animated-heart'
-import { useLocation } from 'react-router-dom'
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  InstapaperShareButton,
-  LinkedinShareButton,
-  RedditShareButton,
-  TumblrShareButton,
-  TwitterShareButton,
-} from 'react-share'
 
-import {
-  EmailIcon,
-  FacebookIcon,
-  InstapaperIcon,
-  LinkedinIcon,
-  RedditIcon,
-  TwitterIcon,
-} from 'react-share'
-
-const ComponentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-const WelcomeMessage = styled.h1`
-  margin: 0;
-  padding: 2rem 0 2rem 0;
-`
-const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  border-radius: 5%;
-  width: 40%;
-  margin-top: 1rem;
-`
-const ImageStyle = styled.img`
-  width: 75%;
-  border-radius: 5%;
-`
-const ParagraphStyle = styled.p`
-  line-height: 1.5;
-  text-indent: 50px;
-  text-align: start;
-`
 function Images({ images, newDate, setNewDate }) {
-  //   const [like, setLike] = useState(50)
-  //   const [likeActive, setLikeActive] = useState(false)
-  const shareUrl = 'https://spacestagram-spfy.vercel.app/'
   const [isClick, setClick] = useState(false)
   const onChange = (e) => {
     setNewDate(e.target.value)
   }
 
   useEffect(() => {
-    // setLike(JSON.parse(window.localStorage.getItem('like')))
     setClick(JSON.parse(window.localStorage.getItem('click')))
   }, [])
 
   useEffect(() => {
-    // window.localStorage.setItem('like', like)
     window.localStorage.setItem('click', isClick)
   }, [isClick])
 
   const addLike = () => {
-    // setLikeActive(!likeActive)
-    // setLike(likeActive ? like - 1 : like + 1)
     setClick(!isClick)
   }
 
@@ -81,6 +34,7 @@ function Images({ images, newDate, setNewDate }) {
       <input type="date" value={newDate} onChange={onChange} />
       <ImageContainer>
         <h2>{images.title}</h2>
+        <h3>{images.date}</h3>
         <ImageStyle src={images.url} alt="Planets" />
         <div
           style={{
@@ -96,13 +50,11 @@ function Images({ images, newDate, setNewDate }) {
           >
             Likes
           </Heart>
-          {/* <h5 style={{ fontSize: '1rem' }}>{like}</h5> */}
         </div>
         <ParagraphStyle>{images.explanation}</ParagraphStyle>
-        <h3>{images.date}</h3>
+        <SocialShare />
       </ImageContainer>
-      <FacebookIcon size={32} round={true} />
-      <FacebookShareButton url={shareUrl} />
+      <h3>Created by Randy Ortiz</h3>
     </ComponentContainer>
   )
 }
