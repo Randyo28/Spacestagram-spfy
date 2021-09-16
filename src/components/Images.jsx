@@ -29,6 +29,7 @@ const ImageStyle = styled.img`
 const ParagraphStyle = styled.p`
   line-height: 1.5;
   text-indent: 50px;
+  text-align: start;
 `
 // const ButtonStyle = styled.div`
 //   background-color: #5d97e4;

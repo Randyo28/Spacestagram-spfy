@@ -5,7 +5,7 @@ function useFetchHook() {
   const date = new Date().toLocaleDateString('en-CA')
   const [newDate, setNewDate] = useState(date)
   const [image, setImage] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchData = () => {
