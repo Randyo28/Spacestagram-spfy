@@ -37,6 +37,17 @@ export const ParagraphStyle = styled.p`
     width: 165%;
   }
 `
+export const HeartStyle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  align-self: flex-end;
+  @media (max-width: 350px) {
+    margin-right: -1rem;
+  }
+`
+
 export const SocialDivStyle = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -52,4 +63,9 @@ export const SocialDivStyle = styled.div`
   @media (max-width: 350px) {
     width: 150%;
   }
+`
+export const NameStyle = styled.a`
+  text-decoration: none;
+  color: bisque;
+  margin-left: 0.5rem;
 `

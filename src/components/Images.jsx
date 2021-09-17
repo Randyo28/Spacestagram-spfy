@@ -9,21 +9,31 @@ import {
   ImageContainer,
   ImageStyle,
   ParagraphStyle,
+  HeartStyle,
+  NameStyle,
 } from './ImagesStyle'
 
 function Images({ images, newDate, setNewDate }) {
+  const [like, setLike] = useState(0)
   const [isClick, setClick] = useState(false)
   const onChange = (e) => {
     setNewDate(e.target.value)
   }
 
   useEffect(() => {
+    setLike(JSON.parse(window.localStorage.getItem('like')))
     setClick(JSON.parse(window.localStorage.getItem('click')))
   }, [])
 
   useEffect(() => {
+    window.localStorage.setItem('like', like)
     window.localStorage.setItem('click', isClick)
-  }, [isClick])
+  }, [like, isClick])
+
+  const addLike = () => {
+    setLike(isClick ? like - 1 : like + 1)
+    setClick(!isClick)
+  }
 
   return (
     <ComponentContainer>
@@ -37,13 +47,22 @@ function Images({ images, newDate, setNewDate }) {
         ) : (
           <ReactPlayer width="100%" url={images.url} />
         )}
-        <div style={{ transform: 'scale(1)' }}>
-          <Heart isClick={isClick} onClick={() => setClick(!isClick)} />
-        </div>
+        <HeartStyle>
+          <Heart isClick={isClick} onClick={() => addLike()} />
+          <h5 style={{ fontSize: '1rem' }}>{like}</h5>
+        </HeartStyle>
         <ParagraphStyle>{images.explanation}</ParagraphStyle>
         <SocialShare />
       </ImageContainer>
-      <h3>Created by Randy Ortiz</h3>
+      <h3>
+        Created by
+        <NameStyle
+          target="_blank"
+          href="https://www.linkedin.com/in/randy-ortiz28/"
+        >
+          Randy Ortiz
+        </NameStyle>
+      </h3>
     </ComponentContainer>
   )
 }
