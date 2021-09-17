@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 function useFetchHook() {
-  const date = new Date().toLocaleDateString('en-CA')
+  const date = ''
   const [newDate, setNewDate] = useState(date)
   const [image, setImage] = useState([])
   const [loading, setLoading] = useState(true)
