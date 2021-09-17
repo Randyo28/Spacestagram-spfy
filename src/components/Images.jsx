@@ -52,7 +52,7 @@ function Images({ images, newDate, setNewDate }) {
           <h5 style={{ fontSize: '1rem' }}>{like}</h5>
         </HeartStyle>
         <ParagraphStyle>{images.explanation}</ParagraphStyle>
-        <SocialShare />
+        <SocialShare images={images} />
       </ImageContainer>
       <h3>
         Created by

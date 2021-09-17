@@ -15,8 +15,8 @@ import {
   TwitterIcon,
 } from 'react-share'
 
-function SocialShare(props) {
-  const shareUrl = 'https://spacestagram-spfy.vercel.app/'
+function SocialShare({ images }) {
+  const shareUrl = images.url
   return (
     <>
       <h2>Share with your friends now!</h2>
