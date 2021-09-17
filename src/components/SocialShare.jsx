@@ -2,7 +2,7 @@ import { SocialDivStyle } from './ImagesStyle'
 import {
   EmailShareButton,
   FacebookShareButton,
-  InstapaperShareButton,
+  WhatsappShareButton,
   LinkedinShareButton,
   TwitterShareButton,
 } from 'react-share'
@@ -10,7 +10,7 @@ import {
 import {
   EmailIcon,
   FacebookIcon,
-  InstapaperIcon,
+  WhatsappIcon,
   LinkedinIcon,
   TwitterIcon,
 } from 'react-share'
@@ -24,9 +24,9 @@ function SocialShare(props) {
         <FacebookShareButton url={shareUrl}>
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
-        <InstapaperShareButton url={shareUrl}>
-          <InstapaperIcon size={32} round={true} />
-        </InstapaperShareButton>
+        <WhatsappShareButton url={shareUrl}>
+          <WhatsappIcon size={32} round={true} />
+        </WhatsappShareButton>
         <LinkedinShareButton url={shareUrl}>
           <LinkedinIcon size={32} round={true} />
         </LinkedinShareButton>
