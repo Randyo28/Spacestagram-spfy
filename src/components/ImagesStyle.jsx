@@ -20,8 +20,11 @@ export const ImageContainer = styled.div`
   margin-top: 1rem;
 `
 export const ImageStyle = styled.img`
-  width: 75%;
+  width: 100%;
   border-radius: 5%;
+  @media (max-width: 350px) {
+    width: 145%;
+  }
 `
 export const ParagraphStyle = styled.p`
   line-height: 1.5;
