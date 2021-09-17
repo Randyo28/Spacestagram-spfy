@@ -1,4 +1,4 @@
-#Welcome to Spacestagram!
+# Welcome to Spacestagram!
 ## This is a project that shows Nasa's api photo of the day
 ## Features in this project include 
 - Ability to search different dates
