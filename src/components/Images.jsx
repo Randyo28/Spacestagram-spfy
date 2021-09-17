@@ -8,25 +8,22 @@ import {
   ImageStyle,
   ParagraphStyle,
 } from './ImagesStyle'
-import Heart from 'react-animated-heart'
+import Heart from 'react-heart'
 
 function Images({ images, newDate, setNewDate }) {
-  const [isClick, setClick] = useState(false)
+  const [active, setActive] = useState(false)
+  // const [isClick, setClick] = useState(false)
   const onChange = (e) => {
     setNewDate(e.target.value)
   }
 
   useEffect(() => {
-    setClick(JSON.parse(window.localStorage.getItem('click')))
+    setActive(JSON.parse(window.localStorage.getItem('click')))
   }, [])
 
   useEffect(() => {
-    window.localStorage.setItem('click', isClick)
-  }, [isClick])
-
-  const addLike = () => {
-    setClick(!isClick)
-  }
+    window.localStorage.setItem('click', active)
+  }, [active])
 
   return (
     <ComponentContainer>
@@ -43,13 +40,17 @@ function Images({ images, newDate, setNewDate }) {
             alignItems: 'center',
           }}
         >
-          <Heart
-            style={{ width: '80px !important' }}
-            isClick={isClick}
-            onClick={() => addLike()}
-          >
-            Likes
-          </Heart>
+          <div style={{ width: '3rem', margin: '2rem 0' }}>
+            <Heart
+              isActive={active}
+              onClick={() => setActive(!active)}
+              style={{
+                fill: active ? 'red' : 'grey',
+                stroke: active ? 'red' : 'grey',
+                filter: 'drop-shadow(0px 3px 3px rgba(0, 0, 0, 1))',
+              }}
+            />
+          </div>
         </div>
         <ParagraphStyle>{images.explanation}</ParagraphStyle>
         <SocialShare />
