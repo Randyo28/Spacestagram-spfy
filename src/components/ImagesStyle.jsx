@@ -15,7 +15,6 @@ export const ImageContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
   border-radius: 5%;
   width: 53%;
   margin-top: 1rem;
@@ -28,6 +27,15 @@ export const ParagraphStyle = styled.p`
   line-height: 1.5;
   text-indent: 50px;
   text-align: start;
+  @media (max-width: 750px) {
+    width: 120%;
+  }
+  @media (max-width: 500px) {
+    width: 150%;
+  }
+  @media (max-width: 350px) {
+    width: 165%;
+  }
 `
 export const SocialDivStyle = styled.div`
   display: flex;
@@ -35,4 +43,13 @@ export const SocialDivStyle = styled.div`
   align-items: center;
   padding: 1rem;
   width: 50%;
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  @media (max-width: 350px) {
+    width: 150%;
+  }
 `
